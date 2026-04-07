@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Madenat Altybat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo-section">
+                <img src="https://madenataltybat.com/wp-content/uploads/2024/05/sitelogo-e1715951097234.png" alt="Madenat Altybat Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1><a href="index.html">Madenat Altybat</a></h1>
+                    <p class="tagline">Nuts, Spices, Coffee & Sweets</p>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="shop.html" class="shop-link">Shop Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Shop Section -->
+    <section class="shop">
+        <div class="container">
+            <h2>Our Products</h2>
+            
+            <div class="shop-layout">
+                <!-- Sidebar Filters -->
+                <aside class="sidebar">
+                    <h3>Filter by Category</h3>
+                    <div class="filter-group">
+                        <label><input type="checkbox" class="category-filter" value="all" checked> All Products</label>
+                        <label><input type="checkbox" class="category-filter" value="nuts"> Roasted Nuts</label>
+                        <label><input type="checkbox" class="category-filter" value="spices"> Spices</label>
+                        <label><input type="checkbox" class="category-filter" value="chocolates"> Chocolates</label>
+                        <label><input type="checkbox" class="category-filter" value="coffee"> Coffee</label>
+                        <label><input type="checkbox" class="category-filter" value="dried-fruits"> Dried Fruits</label>
+                        <label><input type="checkbox" class="category-filter" value="gifts"> Gift Accessories</label>
+                    </div>
+
+                    <h3>Price Range</h3>
+                    <div class="filter-group">
+                        <label><input type="radio" name="price" value="all" checked> All Prices</label>
+                        <label><input type="radio" name="price" value="under-10"> Under $10</label>
+                        <label><input type="radio" name="price" value="10-25"> $10 - $25</label>
+                        <label><input type="radio" name="price" value="25-50"> $25 - $50</label>
+                        <label><input type="radio" name="price" value="over-50"> Over $50</label>
+                    </div>
+                </aside>
+
+                <!-- Products Grid -->
+                <main class="products-container">
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be loaded here by JavaScript -->
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h3>Subscribe to Our Newsletter</h3>
+            <p>Get exclusive offers and updates from Madenat Altybat</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Madenat Altybat. All Rights Reserved.</p>
+            <p>865 Main St, Paterson, NJ 07503 | (973) 272-8865</p>
+        </div>
+    </footer>
+
+    <script src="shop.js"></script>
+</body>
+</html>
