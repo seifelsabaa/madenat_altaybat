@@ -16,6 +16,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* يمنع السكرول العرضي تماماً */
 }
 
 body {
@@ -23,9 +24,12 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     background-color: var(--white);
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -40,6 +44,7 @@ body {
     top: 0;
     z-index: 1000;
     box-shadow: var(--shadow);
+    width: 100%;
 }
 
 .navbar .container {
@@ -53,18 +58,21 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-shrink: 1; /* يسمح للوجو بالانكماش لو الشاشة ضاقت */
 }
 
 .logo-img {
     height: 70px;
     width: auto;
     object-fit: contain;
+    transition: height 0.3s ease;
 }
 
 .logo-text h1 {
     font-size: 1.8rem;
     font-weight: bold;
     margin: 0;
+    white-space: nowrap; /* يمنع الاسم يتقسم لسطرين بشكل مفاجئ */
 }
 
 .logo-text h1 a {
@@ -88,6 +96,7 @@ body {
     display: flex;
     list-style: none;
     gap: 2rem;
+    align-items: center;
 }
 
 .nav-menu a {
@@ -389,7 +398,7 @@ img.feature-icon {
     margin: 0.5rem 0;
 }
 
-/* Responsive */
+/* Responsive Implementation */
 .hamburger {
     display: none;
     background: none;
@@ -398,7 +407,12 @@ img.feature-icon {
     font-size: 1.5rem;
     cursor: pointer;
     padding: 0.5rem;
-    margin-left: auto;
+}
+
+@media (max-width: 992px) {
+    .logo-text h1 { font-size: 1.4rem; }
+    .logo-img { height: 50px; }
+    .nav-menu { gap: 1rem; }
 }
 
 @media (max-width: 768px) {
@@ -414,8 +428,8 @@ img.feature-icon {
         width: 100%;
         background-color: var(--primary-color);
         flex-direction: column;
-        gap: 1rem;
-        padding: 1rem 0;
+        gap: 0;
+        padding: 0;
         box-shadow: var(--shadow);
     }
 
@@ -423,23 +437,46 @@ img.feature-icon {
         display: flex;
     }
 
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 1.2rem;
+    }
+
+    .shop-link {
+        border-radius: 0 !important;
+    }
+
+    .logo-text h1 {
+        font-size: 1.2rem;
+    }
+
+    .tagline {
+        font-size: 0.75rem;
+    }
+
     .hero {
-        padding: 4rem 1rem;
+        padding: 5rem 1rem;
     }
 
     .hero-content h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .hero-content p {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .about h2,
     .products h2,
-    .testimonials h2,
+    .trust h2,
     .contact h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .product-grid,
@@ -447,4 +484,11 @@ img.feature-icon {
     .contact-info {
         grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 480px) {
+    .logo-section { gap: 0.5rem; }
+    .logo-img { height: 40px; }
+    .logo-text h1 { font-size: 1rem; }
+    .hero-content h2 { font-size: 1.8rem; }
 }
