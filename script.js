@@ -23,29 +23,25 @@ function setupSmoothScroll() {
 
 // Mobile menu setup
 function setupMobileMenu() {
-    const navbar = document.querySelector('.navbar');
-    const navMenu = document.querySelector('.nav-menu');
+    const container = document.querySelector('.navbar .container');
+    const hamburger = document.createElement('button');
+    hamburger.className = 'hamburger';
+    hamburger.innerHTML = '☰';
+    hamburger.setAttribute('aria-label', 'Toggle menu');
     
-    // Add hamburger menu for mobile
-    if (window.innerWidth <= 768) {
-        const hamburger = document.createElement('button');
-        hamburger.className = 'hamburger';
-        hamburger.innerHTML = '☰';
-        
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-        
-        navbar.style.display = 'flex';
-    }
+    hamburger.addEventListener('click', () => {
+        document.querySelector('.nav-menu').classList.toggle('active');
+    });
+    
+    // Insert after logo-section
+    const logoSection = document.querySelector('.logo-section');
+    container.insertBefore(hamburger, logoSection.nextSibling);
 }
 
 // Handle window resize
 window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-        const navMenu = document.querySelector('.nav-menu');
-        if (navMenu) {
-            navMenu.classList.remove('active');
-        }
+    const navMenu = document.querySelector('.nav-menu');
+    if (navMenu) {
+        navMenu.classList.remove('active');
     }
 });
